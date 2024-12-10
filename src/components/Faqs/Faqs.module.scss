@@ -1,0 +1,150 @@
+@import '@/styles/Main.scss';
+
+.section {
+  align-items: center;
+  display: flex;
+  height: auto;
+  padding: 80px 0 80px;
+  position: relative;
+  width: 100%;
+
+  &::before {
+    background: radial-gradient(circle, rgba(48,118,138,0.5144432773109244) 0%, rgba(0,8,30,1) 50%);
+    content: '';
+    height: 400px;
+    left: -323px;
+    opacity: .5;
+    pointer-events: none;
+    position: absolute;
+    top: 0px;
+    transform: scale(2.5, 2);
+    width: 500px;
+
+    @media (max-width: 600px) {
+      display: none;
+    }
+  }
+}
+
+.container {
+  align-items: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: auto;
+  max-width: 1192px;
+  min-height: 600px;
+  padding: 0 20px;
+  position: relative;
+  width: 100%;
+  z-index: 1;
+
+  @media (min-width: $screen-xl) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.title {
+  @include title;
+  $color: $white;
+  font-weight: 700;
+  margin-bottom: 30px;
+  text-align: center;
+  width: 100%;
+
+  span {
+    color: $main-color;
+  }
+}
+
+.info {
+  margin-bottom: 50px;
+  width: 100%;
+
+  @media (min-width: $screen-sm) {
+    padding-right: 30px;
+    position: sticky;
+    top: 100px;
+    width: 40%;
+  }
+
+  &_title {
+    @include title;
+    $color: $white;
+    font-weight: 700;
+  }
+}
+
+.btn {
+  @include main-btn;
+  display: inline-block;
+  margin-top: 30px;
+}
+
+.faqs {
+  overflow: hidden;
+  width: 100%;
+
+  @media (min-width: $screen-sm) {
+    width: 60%;
+  }
+
+  @media (min-width: $screen-xl) {
+    width: 50%;
+  }
+}
+
+.item {
+  &:not(:first-child) {
+    border-top: 1px solid rgba($main-color, .2);;
+  }
+}
+
+.head {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  padding: 32px;
+  background-color: $bg;
+  transition: background-color .5s;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  @media (max-width: $screen-md) {
+    padding: 20px;
+  }
+
+  svg {
+    color: $white;
+    font-size: 25px;
+    transition: color .5s;
+  }
+
+  &:hover {
+    background-color: $bg2;
+  }
+}
+
+.question {
+  color: $white;
+  font-size: 18px;
+  font-weight: 500;
+  transition: color .5s;
+  width: 89%;
+}
+
+.answer {
+  background: $bg2;
+  overflow: hidden;
+  padding: 0;
+  transition: all .3s;
+  width: 100%;
+}
+
+.text {
+  color: $text-color;
+  font-size: 16px;
+  font-weight: 200;
+}

@@ -1,0 +1,84 @@
+@import '@/styles/Main.scss';
+
+.banner {
+  align-items: center;
+  display: flex;
+  height: calc(85dvh);
+  position: relative;
+  width: 100%;
+
+  @media (max-width: 600px) {
+    margin-top: 60px;
+  }
+
+  &::before {
+    background: linear-gradient(180deg, rgba($bg,0) 0%, rgba($bg,1) 80%);;
+    bottom: 0;
+    content: '';
+    height: 13rem;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+  }
+}
+
+.container {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  max-width: 90%;
+  padding: 0 20px;
+  position: relative;
+  width: 100%;
+  z-index: 2;
+
+  @media (max-width: $screen-sm) {
+    max-width: 100%;
+  }
+}
+
+.content {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-top: -50px;
+  max-width: 900px;
+  width: 100%;
+}
+
+.title {
+  @include title (
+    $min-size: 50px,
+    $max-size: 66px
+  );
+  margin-bottom: 20px;
+  text-align: center;
+  $color: $white;
+
+  span {
+    color: $main-color;
+  }
+}
+
+.text {
+  color: $white-dark;
+  font-size: 21px;
+  font-weight: 400;
+  max-width: 500px;
+  text-align: center;
+}
+
+.video {
+  display: block;
+  height: 85dvh;
+  left: 0;
+  -o-object-fit: cover;
+  object-fit: cover;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}

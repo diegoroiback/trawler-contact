@@ -1,0 +1,67 @@
+@import '@/styles/Main.scss';
+
+.team {
+  align-items: center;
+  background: #000512CC;
+  display: flex;
+  padding-bottom: 70px;
+  padding-top: 70px;
+  position: relative;
+  width: 100%;
+}
+
+.container {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  max-width: 900px;
+  padding: 0 20px;
+  position: relative;
+  width: 100%;
+  z-index: 2;
+
+  @media (max-width: $screen-sm) {
+    max-width: 100%;
+  }
+}
+
+.list {
+  display: grid;
+  gap: 60px;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+
+  @media (max-width: $screen-sm) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.item {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+
+  img {
+    max-width: 282px;
+  }
+}
+
+.name {
+  color: $white;
+  font-size: 32px;
+  margin-top: 15px;
+}
+
+.position {
+  color: $text-color;
+  font-size: 20px;
+}
+
+.linkedin {
+  color: $main-color;
+  font-size: 25px;
+  margin-top: 15px;
+}

@@ -1,0 +1,166 @@
+@import '@/styles/Main.scss';
+
+.section {
+  align-items: center;
+  display: flex;
+  height: auto;
+  padding: 50px 0;
+  position: relative;
+  width: 100%;
+
+  &::before {
+    background: radial-gradient(circle, rgba(48,118,138,0.5144432773109244) 0%, rgba(0,8,30,1) 50%);
+    content: '';
+    height: 400px;
+    left: -323px;
+    opacity: .5;
+    pointer-events: none;
+    position: absolute;
+    top: -100px;
+    transform: scale(2.5, 2);
+    width: 500px;
+  }
+
+  &::after {
+    background: radial-gradient(circle, rgba(48,118,138,0.5144432773109244) 0%, rgba(0,8,30,1) 50%);
+    bottom: -100px;
+    content: '';
+    height: 400px;
+    opacity: .5;
+    pointer-events: none;
+    position: absolute;
+    right: -323px;
+    transform: scale(2.5, 2);
+    width: 500px;
+
+    @media (max-width: $screen-md) {
+      display: none;
+    }
+  }
+}
+
+.container {
+  align-items: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: auto;
+  max-width: 1192px;
+  min-height: 600px;
+  padding: 0 20px;
+  position: relative;
+  width: 100%;
+  z-index: 1;
+
+  @media (min-width: $screen-xl) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.tabs {
+  border-left: 3px solid $text-color2;
+  margin-bottom: 100px;
+  position: sticky;
+  top: 150px;
+  width: 33%;
+
+  @media (max-width: $screen-lg) {
+    display: none;
+  }
+
+  &_btn {
+    background: transparent;
+    border: 0;
+    color: $text-color2;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 15px 0 15px 20px;
+    transition: all .5s;
+
+    &.active,
+    &:hover {
+      color: $white;
+    }
+
+    &.active {
+      color: $white;
+      font-weight: 700;
+      padding-left: 30px;
+      position: relative;
+
+      &::before {
+        background-color: $main-color;
+        box-shadow: 0 0 21px $shadow-color;
+        content: '';
+        height: 100%;
+        left: -4px;
+        position: absolute;
+        top: 0;
+        width: 5px;
+      }
+    }
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 66%;
+
+  @media (max-width: $screen-lg) {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+  }
+}
+
+.item {
+  align-items: flex-end;
+  background-color: #0a1325;
+  border-radius: 9px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 30px;
+  position: relative;
+
+  &_content {
+    width: 100%;
+    z-index: 2;
+
+    @media (min-width: $screen-md) {
+      bottom: 30px;
+      left: 30px;
+      position: absolute;
+      width: 60%;
+    }
+  }
+
+  &_img {
+    margin-bottom: 20px;
+    z-index: 0;
+
+    @media (min-width: $screen-md) {
+      margin-bottom: 120px;
+    }
+
+    @media (min-width: $screen-xl) {
+      margin-bottom: 90px;
+    }
+  }
+
+  &_title {
+    color: $white;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 5px;
+  }
+
+  &_text {
+    @include text;
+  }
+}
+

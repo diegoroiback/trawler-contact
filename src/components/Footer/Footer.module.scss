@@ -1,0 +1,151 @@
+@import '@/styles/Main.scss';
+
+.footer {
+  align-items: center;
+  background-color: $bg2;
+  display: flex;
+  height: auto;
+  padding: 80px 0;
+  width: 100%;
+}
+
+.container {
+  align-items: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: auto;
+  max-width: 1192px;
+  padding: 0 20px;
+  position: relative;
+  width: 100%;
+  z-index: 1;
+
+  @media (min-width: $screen-xl) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.info {
+  margin-bottom: 50px;
+  width: 100%;
+
+  @media (min-width: $screen-sm) {
+    width: 30%;
+  }
+}
+
+.text {
+  @include title;
+  $color: $white;
+  font-weight: 700;
+}
+
+
+.btn {
+@include main-btn;
+display: inline-block;
+margin-top: 30px;
+}
+
+.services {
+  align-items: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  width: 100%;
+
+  @media (min-width: $screen-lg) {
+    width: 66%;
+  }
+
+  &_title {
+    color: $white;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  &_list {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &_text {
+    @include text;
+    transition: color .5s;
+
+    &:hover {
+      color: $white;
+    }
+  }
+
+  &_item {
+    width: 100%;
+
+    @media (min-width: $screen-sm) {
+      width: 45%;
+
+    }
+
+    @media (min-width: $screen-xl) {
+      width: 22%;
+
+      &:nth-child(1) {
+        width: 26%;
+      }
+
+      &:nth-child(3) {
+        width: 18%;
+      }
+    }
+  }
+}
+
+.lower {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+  margin-top: 30px;
+  padding-top: 20px;
+  position: relative;
+  width: 100%;
+
+  &::after {
+    background:  linear-gradient(261deg, rgba($bg2,1) 20%, rgba($main-color,.3) 50%, rgba($bg2,1) 80%);
+    content: '';
+    height: 1px;
+    position: absolute;
+    top: -1px;
+    width: 100%;
+  }
+}
+
+.social {
+  align-items: center;
+  display: flex;
+  gap: 15px;
+
+  &_text {
+    @include text;
+  }
+
+  &_link {
+    align-items: center;
+    color: $white;
+    display: flex;
+    font-size: 22px;
+  }
+}
+
+.rights {
+  @include text;
+  @media (max-width: $screen-sm) {
+    width: 100%;
+  }
+}

@@ -1,0 +1,77 @@
+@import '@/styles/Main.scss';
+
+.section {
+  align-items: center;
+  display: flex;
+  padding: 90px 0;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.container {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: auto;
+  max-width: 1200px;
+  padding: 0 20px;
+  position: relative;
+  width: 100%;
+  z-index: 2;
+}
+
+.image {
+  width: 50%;
+
+  @media (max-width: $screen-sm) {
+    width: 60%;
+    margin: auto auto 20px;
+  }
+}
+
+.content {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  max-width: 1100px;
+  width: 45%;
+
+  @media (max-width: $screen-sm) {
+    align-items: center;
+    width: 100%;
+  }
+}
+
+.title {
+  @include title (
+    $min-size: 128px,
+    $max-size: 128px
+  );
+  text-align: center;
+  color: $main-color;
+}
+
+.text {
+  color: $white-dark;
+  font-size: 20px;
+  font-weight: 400;
+  margin: 5px 0 15px;
+
+  @media (max-width: $screen-sm) {
+    text-align: center;
+  }
+}
+
+.btn {
+  @include main-btn2 (
+    $bg: $main-color,
+    $bgHover: $second-color,
+    $color: $bg,
+    $colorHover: $white,
+  );
+  display: inline-block;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
